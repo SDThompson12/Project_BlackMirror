@@ -1,0 +1,92 @@
+body
+{
+    background-color: #000;    
+}
+
+#landing-header
+{
+    z-index: 1;
+    position: relative;
+    text-align: center;
+    padding-top: 40vh;
+}
+
+#landing-header h1
+{
+    color: white;
+}
+
+.slideshow
+{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.slideshow li { 
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover; /* Allows images to take up entire space of page */
+  background-position: 50% 50%; /* Centers images perfectly in the center of page */
+  background-repeat: no-repeat; /*Makes it so none of the image repeat vertically or horizontally */
+  opacity: 0;
+  z-index: 0; /*Places images behind any z-index greater than 0 */
+  animation: imageAnimation 50s linear infinite; 
+}
+
+.slideshow li:nth-child(1) 
+{ 
+  background-image: url(https://static1.squarespace.com/static/507b2f30e4b066e116488db6/t/5535e70ee4b0159f5b597d9d/1429595951407/)
+}
+.slideshow li:nth-child(2) 
+{ 
+  background-image: url(https://gse.gigaset.com/uploads/tx_templavoila/start_smart_home_header_1140x540.jpg?m=1511176815);
+  animation-delay: 10s; 
+}
+.slideshow li:nth-child(3) 
+{ 
+  background-image: url(http://www.antiktech.com/photos/original/xsmarthome-schema_c9bb6e83b28e5a2b03766524b150f23a.png.pagespeed.ic.Rxz_1H0J_k@2x.jpg);
+  animation-delay: 20s; 
+}
+.slideshow li:nth-child(4) 
+{ 
+  background-image: url(https://cdn-images-1.medium.com/max/1600/1*fvSbNxcwtzuylKRgO9RlZA.jpeg);
+  animation-delay: 30s; 
+}
+.slideshow li:nth-child(5) 
+{ 
+  background-image: url(http://paintingpractice.com/wp-content/uploads/2017/04/BM_HologramC-copy-copy-1200x600.jpg);
+  animation-delay: 40s; 
+}
+
+@keyframes imageAnimation { 
+  0% { 
+    opacity: 0; 
+    animation-timing-function: ease-in;
+  }
+  10% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  20% {
+    opacity: 1
+  }
+  30% {
+    opacity: 0
+  }
+}
+
+/* Older browser support - .no-cssanimations class added by modernizr */
+.no-cssanimations .slideshow li 
+{
+	opacity: 1;
+}
